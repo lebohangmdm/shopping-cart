@@ -1,11 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
 import { data } from "./data";
+import reducer from "./reducer";
 
 const AppContext = createContext();
 
 const initialState = {
   cart: data,
-  isLoading: false,
 };
 
 export const AppProvider = ({ children }) => {
