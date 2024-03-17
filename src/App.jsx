@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <section>
-        <div className="container mx-auto px-8 my-12 ">
+        <div className="container mx-auto px-8 my-8 ">
           <h1 className="text-3xl border-b-2 border-black pb-4">
             Shopping Cart
           </h1>

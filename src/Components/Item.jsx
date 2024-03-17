@@ -1,8 +1,11 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
 const Item = ({ item }) => {
-  const { name, photoName, price, color } = item;
-  console.log(item);
+  const { id, name, photoName, price, color, amount } = item;
+  const { decrementHandler, incrementHandler, removeHandler } =
+    useGlobalContext();
+  console.log(id);
 
   return (
     <div className="flex gap-6  border-b-2 border-black pb-4">
@@ -10,13 +13,15 @@ const Item = ({ item }) => {
         <img
           src={photoName}
           alt={name}
-          className="w-[200px] h-[200px] object-cover "
+          className="w-[160px] h-[160px] object-cover "
         />
       </div>
       <div className="flex-1 p-4 flex flex-col justify-between">
         <div className="flex items-center justify-between">
           <p className="text-2xl font-semibold ">{name}</p>
-          <button className="text-2xl">x</button>
+          <button className="text-2xl" onClick={() => removeHandler(id)}>
+            x
+          </button>
         </div>
         <div className="flex items-center justify-between">
           <div className="flex  gap-4">
@@ -43,9 +48,19 @@ const Item = ({ item }) => {
             </select>
           </div>
           <div className="flex items-center gap-4 border border-black py-2 px-6">
-            <button className="text-black font-medium text-3xl">-</button>
-            <span className="text-black font-medium text-xl">1</span>
-            <button className="text-black font-medium text-3xl">+</button>
+            <button
+              className="text-black font-medium text-3xl"
+              onClick={() => decrementHandler(id)}
+            >
+              -
+            </button>
+            <span className="text-black font-medium text-xl">{amount}</span>
+            <button
+              className="text-black font-medium text-3xl"
+              onClick={() => incrementHandler(id)}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="flex items-center justify-between">

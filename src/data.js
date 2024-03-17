@@ -6,6 +6,7 @@ export const data = [
     color: ["black"],
     price: 1572,
     tax: 25,
+    amount: 1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const data = [
     color: ["black", "white"],
     price: 800,
     tax: 5,
+    amount: 1,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const data = [
     color: ["black"],
     price: 2100,
     tax: 50,
+    amount: 1,
   },
   {
     id: 4,
@@ -30,5 +33,6 @@ export const data = [
     color: ["black"],
     price: 3400,
     tax: 125,
+    amount: 1,
   },
 ];

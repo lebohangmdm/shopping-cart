@@ -6,15 +6,15 @@ const Cart = () => {
         <div className="space-y-1">
           <div className="flex items-center justify-between">
             <p className=" text-gray-700 uppercase">Subtotal</p>
-            <p className="font-semibold">$128</p>
+            <p className="font-semibold">R2250</p>
           </div>
           <div className="flex items-center justify-between">
             <p className=" text-gray-700 uppercase">tax</p>
-            <p className="font-semibold">$3</p>
+            <p className="font-semibold">R250</p>
           </div>
           <div className="flex items-center justify-between">
             <p className=" text-gray-700 uppercase">total</p>
-            <p className="font-bold">$131</p>
+            <p className="font-bold">R2500</p>
           </div>
         </div>
         <div className="mt-4">
