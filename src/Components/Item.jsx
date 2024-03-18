@@ -5,7 +5,6 @@ const Item = ({ item }) => {
   const { id, name, photoName, price, color, amount } = item;
   const { decrementHandler, incrementHandler, removeHandler } =
     useGlobalContext();
-  console.log(id);
 
   return (
     <div className="flex gap-6  border-b-2 border-black pb-4">
