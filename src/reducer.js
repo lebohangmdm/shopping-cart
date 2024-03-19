@@ -36,6 +36,40 @@ const reducer = (state, action) => {
     };
   }
 
+  if (action.type === "get_total") {
+    let { total, amount, tax, subtotal } = state.cart.reduce(
+      (cartSum, item) => {
+        const { price, amount, tax } = item;
+        const fullPrice = (price + tax) * amount;
+        const fullTax = tax * amount;
+        const subtotal = price * amount;
+
+        cartSum.subtotal += subtotal;
+        cartSum.tax += fullTax;
+        cartSum.amount += amount;
+        cartSum.total += fullPrice;
+        return cartSum;
+      },
+      {
+        total: 0,
+        amount: 0,
+        tax: 0,
+        subtotal: 0,
+      }
+    );
+
+    total = parseFloat(total.toFixed(2));
+    tax = parseFloat(tax.toFixed(2));
+    subtotal = parseFloat(subtotal.toFixed(2));
+    return {
+      ...state,
+      total,
+      amount,
+      tax,
+      subtotal,
+    };
+  }
+
   throw new Error(`No match for this type: ${action.type}`);
 };
 

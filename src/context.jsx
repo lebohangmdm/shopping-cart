@@ -1,11 +1,15 @@
-import { createContext, useContext, useReducer } from "react";
-import { data } from "./data";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import { cartList } from "./data";
 import reducer from "./reducer";
 
 const AppContext = createContext();
 
 const initialState = {
-  cart: data,
+  cart: cartList,
+  total: 0,
+  amount: 0,
+  tax: 0,
+  subtotal: 0,
 };
 
 export const AppProvider = ({ children }) => {
@@ -26,6 +30,10 @@ export const AppProvider = ({ children }) => {
   const clearCartHandler = () => {
     dispatch({ type: "clear_cart" });
   };
+
+  useEffect(() => {
+    dispatch({ type: "get_total" });
+  }, [state.cart]);
 
   return (
     <AppContext.Provider

@@ -1,4 +1,4 @@
-export const data = [
+export const cartList = [
   {
     id: 1,
     name: "Diesel Sport",
@@ -32,7 +32,7 @@ export const data = [
     photoName: "shoe4.jpg",
     color: ["black"],
     price: 3400,
-    tax: 125,
+    tax: 100,
     amount: 1,
   },
 ];
